@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <h2 class="mb-3">All Tasks</h2>
+
+  <div *ngIf="loading" class="alert alert-info">
+    Loading tasks...
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <table *ngIf="!loading && tasks.length > 0" class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Task Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.dtoId }}</td>
+        <td>{{ task.dtoTaskName }}</td>
+        <td>
+          <span [ngClass]="{'text-success': task.dtoTaskIsCompleted, 'text-danger': !task.dtoTaskIsCompleted}">
+            {{ task.dtoTaskIsCompleted ? 'Completed' : 'Pending' }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && tasks.length === 0" class="alert alert-warning">
+    No tasks found. Please add some!
+  </div>
+</div>
