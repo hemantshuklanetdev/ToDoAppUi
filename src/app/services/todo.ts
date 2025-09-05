@@ -24,7 +24,7 @@ export class Todo {
   }
 
   add(task: any): Observable<TaskDTO> {
-    return this.http.post<TaskDTO>(`${this.apiUrl}/Add`, task);
+    return this.http.post<TaskDTO>(`${this.apiUrl}/AddTask`, task);
   }
 
   update(task: TaskDTO): Observable<TaskDTO> {
