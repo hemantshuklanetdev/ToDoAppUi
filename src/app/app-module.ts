@@ -12,6 +12,9 @@ import { Footbar } from './menu/footbar/footbar';
 import { ErrorComponent } from './Error/error-component/error-component';
 import { RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { Add } from './reminder/add/add';
+import { View } from './reminder/view/view';
+import { Update } from './reminder/update/update';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     TopBar,
     Footbar,
     ErrorComponent,
+    Add,
+    View,
+    Update,
     
   ],
   imports: [
